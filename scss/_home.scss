@@ -1,0 +1,82 @@
+#home2025 {
+  .home-hero {
+    background-size: cover;
+    padding-bottom: 50px;
+    .hero-intro {
+      text-align: center;
+      h1 {
+        font-size: 55px;
+        letter-spacing: 0.05em;
+        color: $cta-blue;
+        font-weight: 900;
+        padding: 0.5em 0 0 0;
+        margin: 25px 0 10px 0;
+      }
+      h2 {
+        font-size: 30px;
+        font-family: 'Poppins';
+        color: $cta-blue;
+        font-weight: 500;
+        padding: 0 0 0 0;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+    }
+    .hero-services {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      margin-top: 30px;
+      .hero-service {
+        text-align: center;
+        width: 45%;
+        border-radius: 24px;
+        background: $black50;
+        padding-bottom: 20px;
+        transition: all 500ms;
+        img.effect {
+          display: block;
+          width: 175px;
+          margin: 25px auto;
+        }
+        img.text {
+          width: 75%;
+          margin-bottom: 20px;
+        }
+        p {
+          color: $white;
+          font-family: 'Ag';
+          width: 70%;
+          font-size: 16px;
+          margin: 0 auto;
+          font-weight: 600;
+        }
+        &.environmental {
+          //background-color: rgba(0,200,0,0.33);
+          &:hover {
+            background-color: rgba(0,150,0,0.75);
+          }
+        }
+        &.electric {
+          //background-color: rgba(200,0,0,0.33);
+          &:hover {
+            background-color: rgba(200,0,0,0.75);
+          }
+        }
+        a {
+          > * {
+            transition: all 250ms;
+          }
+          &:hover {
+            text-decoration: none;
+            img.effect {
+              width: 200px;
+              margin: 12.5px auto;
+            }
+          }                  
+        }
+
+      }
+    }
+  }
+}

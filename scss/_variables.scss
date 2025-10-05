@@ -1,0 +1,135 @@
+$white: #ffffff;
+$black: #000000;
+$greyBG: #f5f5f5;
+$grey: #494949;
+$greylite: #f5f5f5;
+$greysearch: #D8D8D8;
+$greymedium: #b2b2b2;
+$greydark: #808080;
+$brandcolor: #27235e;
+$cornflower: #375c9a;
+$cta-blue: #27235e;
+$cta-green: #5F843A;
+$cta-red: #C1272D;
+$cta-yellow: #EFB02C;
+$cta-lime: #9fcc36;
+$trcblue: #27235e;
+$nav-trace: #4c5270;
+$brandcolor-hover: #de1a22;
+$trcred: #96050c;
+$elec-nav: #C3262E;
+$nav-trace-elec: #760f11;
+$elec-footer: #760F11;
+$elec-light: #ebddd7;
+$elec-salmon: #D97F76;
+$env-nav: #199E55;
+$nav-trace-env: #095D40;
+$env-footer: #095D40;
+$env-light: #84C875;
+$env-melon: #84C875;
+$success: #5cb85c;
+$black05: rgba(0,0,0,0.05);
+$black10: rgba(0,0,0,0.10);
+$black15: rgba(0,0,0,0.15);
+$black25: rgba(0,0,0,0.25);
+$black50: rgba(0,0,0,0.50);
+$black75: rgba(0,0,0,0.75);
+$textcolor: #333;
+
+@mixin breakpoint($point) {
+    @if $point == mobile {
+      @media only screen and (max-width: 1023px) { @content; }
+    }
+    @if $point == desktop {
+      @media only screen and (min-width: 1024px) { @content; }
+    }
+    @if $point == sm {
+      @media only screen and (min-width: 769px) and (max-width: 992px) { @content; }
+    }
+    @if $point == md {
+      @media only screen and (min-width: 993px) and (max-width: 1199px) { @content; }
+    }
+    @if $point == lg {
+      @media only screen and (min-width: 1200px) { @content; }
+    }
+    @if $point == xl {
+        @media only screen and (min-width: 1400px) { @content; }
+    }
+}
+/*
+@font-face {
+  font-family: Fa;
+  src: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/fonts/flight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Fa;
+  src: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/fonts/fbook.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Fa;
+  src: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/fonts/fmed.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Fa;
+  src: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/fonts/fbold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+*/
+@font-face {
+  font-family: Ag;
+  src: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/fonts/ag_thin.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Ag;
+  src: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/fonts/ag_light.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Ag;
+  src: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/fonts/ag_regular.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Ag;
+  src: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/fonts/ag_medium.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Ag;
+  src: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/fonts/ag_bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Ag;
+  src: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/fonts/ag_extrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Ag;
+  src: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/fonts/ag_black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
