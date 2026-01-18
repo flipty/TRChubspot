@@ -29,12 +29,21 @@
           <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="javascript:;" role="menuitem">CONTACT</a></li>
         </ul>
         </div>
-        <!-- <ul>
-          <li class="search"><a href="">SEARCH</a></li>
-        </ul> -->
+        <ul>
+          <li class="search"><a href="#">SEARCH</a></li>
+        </ul>
       </nav> 
     </div>
   </div>
+     <div class="searchbar">
+      <div class="input">
+        <input type="search" class="search" placeholder="Enter Search Term">
+      </div>
+      <div class="searchbutton">
+        <button>SEARCH</button>
+      </div>
+    </div>
+
 </header>
 
 <main id="vertical-electric">

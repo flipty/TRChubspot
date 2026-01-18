@@ -1,3 +1,6 @@
+/*
+?hsDebug=true&hsCacheBuster
+*/
 body {
 	margin: 0;
 }
@@ -27,6 +30,9 @@ header {
     .brand {
 		img {
 			width: 125px;//test
+			@include breakpoint(mobile){
+				width: 70px;
+			}
 		}
     }
     nav.main-navigation {
@@ -42,11 +48,22 @@ header {
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: flex-end;
+			@include breakpoint(mobile){
+				flex-flow: column;
+				position: absolute;
+				z-index: 100;
+				width: calc(100% + 15px);
+				left: -15px;
+				top: 70px;
+			}
 			> ul { //role="menu"
 				display: flex;
 				flex-flow: row;
 				justify-content: flex-end;
 				position: relative;
+				@include breakpoint(mobile){
+					flex-flow: column;
+				}
 				> li {
 					margin-left: 15px;
 					a {
@@ -60,28 +77,13 @@ header {
 						color: $white;
 						border-radius: 4px;
 						padding: 0.25em 2em 0.1em 2em;
-						//margin: 0 0.5em;
+						@include breakpoint(mobile){
+							border-radius: 0;
+							padding-left: 15px;
+							border: none;
+						}
 						&:hover {
 							text-decoration: none;
-							//background-color: $brandcolor-hover;
-						}
-					}
-					&.search { 
-						margin-top: -3px;
-						a {
-							text-indent: -9999px;
-							background-color: $cta-yellow;
-							border-color: transparent;
-							display: block;
-							border-radius: 50px;
-							height: 22px;
-							width: 22px;
-							margin-top: -1px;
-							background-image: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/icons/search-inverse.svg');
-							background-size: 22px;
-							background-repeat: no-repeat;
-							background-position: 12px 12px;
-							padding: 22px;						
 						}
 					}
 					&.hs-item-has-children {
@@ -89,14 +91,28 @@ header {
 							display: none; 
 							position: absolute;
 							top: 32px;
-							//margin-left: 1px;
 							box-shadow: 0 0 5px $black50;
 							border-radius: 6px;
+							@include breakpoint(mobile){
+								display: flex;
+								flex-flow: row wrap;
+								justify-content: flex-start;
+								position: static;
+								border-radius: 0;
+								background: #DDD;
+							}
 							li {
+								@include breakpoint(mobile){
+									width: 50%;
+								}
 								&:first-child {
 									a {
 										border-top: solid 1px $black50;
 										border-top-right-radius: 6px;
+										@include breakpoint(mobile){
+											border-top: none;
+											border-radius: 0;
+										}
 									}
 								}
 								a {
@@ -113,6 +129,12 @@ header {
 									background: #DDD;
 									color: $textcolor;
 									white-space: nowrap;
+									@include breakpoint(mobile){
+										white-space: normal;
+										border-radius: 0;
+										line-height: 1.1em;
+										border: none;
+									}
 									&:hover {
 										background: #999;
 										color: #FFF;
@@ -124,6 +146,9 @@ header {
 										border-bottom-left-radius: 4px;
 										border-bottom-right-radius: 4px;
 										border-top-right-radius: 0;	
+										@include breakpoint(mobile){
+											border-radius: 0;
+										}
 									}
 								}
 							}
@@ -141,9 +166,79 @@ header {
 				}
 			}
 		}
-		
+		ul {
+			li.search { 
+				margin-top: 0px;
+				padding-left: 15px;
+				a {
+					text-indent: -9999px;
+					background-color: $cta-blue;
+					border-color: transparent;
+					display: block;
+					border-radius: 50px;
+					height: 22px;
+					width: 22px;
+					margin-top: -1px;
+					background-image: url('https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/icons/search-inverse.svg');
+					background-size: 18px;
+					background-repeat: no-repeat;
+					background-position: 10px 10px;
+					padding: 18px;						
+				}
+			}
+		}
     }
   }
+	.searchbar {
+		padding: 0;
+		background: #DDD;
+		height: 0px;
+		transition: all 500ms;
+		overflow: hidden;
+		position: relative;
+		label {
+			display: none;
+		}
+		&.active {
+			height: 75px;
+			padding: 15px;
+		}
+	  	.hs-search-field__form {
+			position: relative;
+			input.search {
+				width: 100%;
+				padding-top: 12px;
+				padding-bottom: 8px;
+				text-align: right;
+				padding-right: 95px;
+				font-family: 'Poppins';
+			}
+			.searchbutton {
+				position: absolute;
+				right: 0;
+				top: 0;
+				transition: all 250ms;
+				background: #666;
+				color: #fff;
+				padding: 0 10px;				
+				margin: 0;
+				line-height: 43px;
+				border: none;
+				border-top-right-radius: 4px;
+				border-bottom-right-radius: 4px;
+				span {
+					font-family: 'Ag';
+					font-weight: 700;
+				}
+				&:hover {
+					background: #333;
+				}
+			}			
+		}
+		.hs-search-field__suggestions-container {
+			display: none;
+		}
+	}
 }
  
 footer {
@@ -165,11 +260,15 @@ footer {
 			@include breakpoint(mobile){
 				padding: 0;
 				margin-bottom: 20px;
-				text-align: left;
+				text-align: center;
 			}
 		}
     .service-links {
       width: 222px;
+		@include breakpoint(mobile){
+			width: auto;
+		}
+
       a.service-link {
         display: block;
         text-align: center;
@@ -208,6 +307,9 @@ footer {
           margin-left: 20px;
           height: 1px;          
           border-bottom: solid 1px $brandcolor;
+			@include breakpoint(mobile){
+				width: auto;
+			}
         }
       }      
     }
@@ -258,7 +360,7 @@ footer {
 			margin: 50px auto 15px auto;
 			display: block;
 			@include breakpoint(mobile){
-				display: none;
+				width: 100px;
 			}
 		}
 		span.footerLogoText {
@@ -396,12 +498,6 @@ body.vertical-electrical {
 							color: $white;
 							&:hover {
 							background-color: $brandcolor-hover;
-							}
-						}
-						&.search {
-							a {
-								background-color: $black50;
-								border-color: transparent;
 							}
 						}
 						&:hover {
@@ -622,6 +718,69 @@ body.vertical-environmental {
 		}
 		&.footerBottom {
 			border-top: solid 1px $env-light;
+		}
+	}
+}
+
+body.vertical-electrical main {
+	p, ul, li, span, .landing-service-grid .service {
+		a {
+			color: $cta-red;
+			//temporary debug/troubleshooting background;
+			//background-color: rgba(0,0,0,0.1) !important;
+		}
+	}
+}
+
+body.vertical-environmental main {
+	p, ul, li, span, .landing-service-grid .service {
+		a {
+			color: $cta-green;
+			//temporary debug/troubleshooting background;
+			//background-color: rgba(0,0,0,0.1) !important;
+		}
+	}
+	
+		
+}
+
+body.vertical-corporate main {
+	p, ul, li, span, .landing-service-grid .service {
+		a {
+			color: $cta-blue;
+			//temporary debug/troubleshooting background;
+			//background-color: rgba(0,0,0,0.1) !important;
+		}
+	}
+}
+
+.search-result-container {
+	h1 {
+		span {
+			color: $cta-red;
+		}
+	}
+	.hs-search-results {
+		a {
+			h2 {
+				text-decoration: underline;
+			}
+		}
+		.hs-search-highlight {
+			color: $cta-red;
+		}
+	}
+	.hs-search-results__pagination {
+		margin-bottom: 30px;
+		a {
+			font-family: 'Poppins';
+			padding: .35rem .7rem;
+			background: #999;
+			color: $white;
+			border-radius: 4px;
+			&:hover {
+				background: $cta-blue;
+			}
 		}
 	}
 }
