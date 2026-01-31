@@ -22,6 +22,7 @@ a.button {
 }
 
 header {
+	background: white;
   .header-items {
 	display: flex;
 	flex-flow: row;
@@ -39,6 +40,16 @@ header {
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: flex-end;
+		@include breakpoint(mobile){
+			transition: all 500ms;
+			position: fixed;
+			width: 100%;
+			margin-left: -110%;		
+			z-index: 99;
+			&.mobile-active {
+				margin-left: 0;
+			}
+		}
 		ul, li {
 			list-style: none;
 			padding: 0;
@@ -52,9 +63,9 @@ header {
 				flex-flow: column;
 				position: absolute;
 				z-index: 100;
-				width: calc(100% + 15px);
-				left: -15px;
-				top: 70px;
+				width: calc(100% + 30px);
+				left: -30px;
+				top: 35px;
 			}
 			> ul { //role="menu"
 				display: flex;
@@ -96,14 +107,15 @@ header {
 							@include breakpoint(mobile){
 								display: flex;
 								flex-flow: row wrap;
-								justify-content: flex-start;
+								justify-content: end;
 								position: static;
 								border-radius: 0;
+								box-shadow: none;
 								background: #DDD;
 							}
 							li {
 								@include breakpoint(mobile){
-									width: 50%;
+									width: 48%;
 								}
 								&:first-child {
 									a {
@@ -134,11 +146,17 @@ header {
 										border-radius: 0;
 										line-height: 1.1em;
 										border: none;
+										padding: 0.5em 0;
 									}
 									&:hover {
 										background: #999;
 										color: #FFF;
 										border-top: solid 1px rgba(255,255,255,0.5);
+										@include breakpoint(mobile){
+											border-top: none;
+											background: #DDD;
+											color: #000;
+										}
 									}									
 								}
 								&:last-child { 
@@ -155,8 +173,10 @@ header {
 						}
 						&:hover {
 							.hs-menu-children-wrapper {
-								display: block;
-								z-index: 10;
+								@include breakpoint(desktop) {
+									display: block;
+									z-index: 10;
+								}
 							}
 							> a {
 								//background: $cta-red;
@@ -183,7 +203,10 @@ header {
 					background-size: 18px;
 					background-repeat: no-repeat;
 					background-position: 10px 10px;
-					padding: 18px;						
+					padding: 18px;		
+					@include breakpoint(mobile){
+						display: none;
+					}				
 				}
 			}
 		}
@@ -196,12 +219,23 @@ header {
 		transition: all 500ms;
 		overflow: hidden;
 		position: relative;
+		@include breakpoint(mobile){
+			background: none;
+			transition: none;
+		}
 		label {
 			display: none;
 		}
 		&.active {
 			height: 75px;
 			padding: 15px;
+			@include breakpoint(mobile){
+				position: fixed;
+				top: 0;
+				right: 50px;
+				background: none;
+				z-index: 99;
+			}
 		}
 	  	.hs-search-field__form {
 			position: relative;
@@ -212,6 +246,12 @@ header {
 				text-align: right;
 				padding-right: 95px;
 				font-family: 'Poppins';
+				@include breakpoint(mobile){
+					font-size: 11px;
+					padding-top: 14px;
+					padding-bottom: 10px;
+					padding-right: 110px;
+				}
 			}
 			.searchbutton {
 				position: absolute;
@@ -226,6 +266,9 @@ header {
 				border: none;
 				border-top-right-radius: 4px;
 				border-bottom-right-radius: 4px;
+				@include breakpoint(mobile){
+					padding: 0 5px;
+				}
 				span {
 					font-family: 'Ag';
 					font-weight: 700;
@@ -240,7 +283,15 @@ header {
 		}
 	}
 }
- 
+
+main {
+	transition: all 500ms;
+	&.blurred {
+		filter: blur(10px);
+		opacity: 0.5;
+	}
+}
+
 footer {
 	background: #B1C5D6;
 	padding: 2em;
@@ -398,7 +449,7 @@ footer {
 	}
 	.footerContact {
 		@include breakpoint(mobile){
-			padding: 0 5em;
+			padding: 0;
 		}
 		h3 {
 			margin-top: 0;
@@ -483,6 +534,11 @@ footer {
 			padding: 0;
 			padding-bottom: 1em;
 		}
+	}
+	transition: all 500ms;
+	&.blurred {
+		filter: blur(10px);
+		opacity: 0.75;
 	}
 }
 
@@ -735,7 +791,8 @@ body.vertical-electrical main {
 body.vertical-environmental main {
 	p, ul, li, span, .landing-service-grid .service {
 		a {
-			color: $cta-green;
+			//color: $cta-green;
+			color: #169D53;
 			//temporary debug/troubleshooting background;
 			//background-color: rgba(0,0,0,0.1) !important;
 		}
@@ -780,6 +837,65 @@ body.vertical-corporate main {
 			border-radius: 4px;
 			&:hover {
 				background: $cta-blue;
+			}
+		}
+	}
+}
+
+
+div.hamburger {
+	@include breakpoint(desktop){
+		display: none;
+	}
+	a {
+		position: fixed;
+		top: 12px;
+		right: 15px;
+		z-index: 99;
+		width: 48px;
+		height: 48px;
+		display: flex;
+		flex-flow: column;
+		justify-content: space-around;
+		span {
+			display: block;
+			width: 100%;
+			height: 3px;
+			border-radius: 2px;
+			background: #888;
+			position: relative;
+			transition: all 250ms;
+			margin: 0 auto;
+			&.top {
+				transform: rotate(0deg);
+			}
+			&.mid {
+				opacity: 1;
+				width: 100%;
+			}
+			&.bot {
+				transform: rotate(0deg);
+			}
+		}
+		&:hover {
+
+		}
+	}
+	&.hamburger-active {
+		a {
+			span {
+				&.top {
+					transform: rotate(45deg);
+					top: 16px;
+				}
+				&.mid {
+					opacity: 0;
+					width: 1px;
+				}
+				&.bot {
+					transform: rotate(-45deg);
+					top: -16px;
+				}
 			}
 		}
 	}

@@ -19,11 +19,11 @@ $(document).ready(function(){
 	});
 
 	//mobile nav hamburger
-	var $hamburger = $('button.navbar-toggle');
-	var $mobileNav = $('ul.navbar-nav');
+	var $hamburger = $('div.hamburger');
+	var $mobileNav = $('.navbar-nav');
 
 	$hamburger.on('click', function(){
-		$mobileNav.toggleClass('inactive');
+		$mobileNav.toggleClass('hamburger-active');
 	});
 
 });//doc.ready

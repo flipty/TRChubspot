@@ -670,7 +670,6 @@ main#event-details {
 .module.portfolio-flipcard {
   width: 600px;
   height: 550px;
-  //float: left;
   perspective: 600px; 
   .content {
     position: absolute;
@@ -689,7 +688,6 @@ main#event-details {
     height: 100%;
     width: 100%;
     background: #CCC;
-    //text-align: center;
     border-radius: 6px;
     backface-visibility: hidden;
   }
@@ -709,3 +707,4 @@ main#event-details {
     transform: rotateY( 180deg );
   }
 }
+
