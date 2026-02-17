@@ -779,7 +779,7 @@ body.vertical-environmental {
 }
 
 body.vertical-electrical main {
-	p, ul, li, span, .landing-service-grid .service {
+	p, ul, li, span, .landing-service-grid .service, .blog-post__tags {
 		a {
 			color: $cta-red;
 			//temporary debug/troubleshooting background;
@@ -789,7 +789,7 @@ body.vertical-electrical main {
 }
 
 body.vertical-environmental main {
-	p, ul, li, span, .landing-service-grid .service {
+	p, ul, li, span, .landing-service-grid .service, .blog-post__tags {
 		a {
 			//color: $cta-green;
 			color: #169D53;
@@ -802,7 +802,7 @@ body.vertical-environmental main {
 }
 
 body.vertical-corporate main {
-	p, ul, li, span, .landing-service-grid .service {
+	p, ul, li, span, .landing-service-grid .service, .blog-post__tags {
 		a {
 			color: $cta-blue;
 			//temporary debug/troubleshooting background;

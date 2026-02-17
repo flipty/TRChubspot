@@ -545,6 +545,12 @@ main#event-details {
 }
 
 main#blog-post {
+  .content-wrapper {
+    @include breakpoint(mobile){
+      padding: 0;   
+    }
+  }
+  
   .hero-headline {
     margin-bottom: 30px;
     .hero-container {
@@ -565,6 +571,9 @@ main#blog-post {
     }
   }
   #hs_cos_wrapper_related_posts {
+    h2 {
+      padding: 0 15px;
+    }
     .blog-listing__post.card {
       margin-bottom: 30px;
       a {
@@ -584,10 +593,16 @@ main#blog-post {
     justify-content: space-between;
     align-items: center;
     font-family: 'Poppins';
+    @include breakpoint(mobile){
+      
+    }
     .social-sharing {
       display: flex;
       flex-flow: row;
       align-items: center;
+      @include breakpoint(mobile){
+        width: 100%;
+      }
       .social-sharing__icon svg {
         height: 16px;
       }
@@ -603,17 +618,35 @@ main#blog-post {
       display: flex;
       flex-flow: row;
       align-items: center;
+      @include breakpoint(mobile){
+        display: block;
+        width: 50%;
+        text-align: right;
+      }
       svg {
         width: 14px;
         margin-right: 10px;
+        @include breakpoint(mobile){
+          display: none;
+        }
+
       }
       a {
-        color: #333;
+        //color: #333;
         text-transform: uppercase;
         font-size: 16px;
         font-weight: 700;
         display: block;
         margin-top: -4px;
+        @include breakpoint(mobile){
+          font-size: 11px;   
+          margin-bottom: 5px;
+        }
+      }
+      span.separator {
+        @include breakpoint(mobile){
+          display: none;
+        }
       }
     }
   }
@@ -707,4 +740,104 @@ main#event-details {
     transform: rotateY( 180deg );
   }
 }
+.hero-headline {
+  .hero-container {
+    position: relative;
+  }
+  .image {
+    position: relative;
+    z-index: 1;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    top: auto;
+    left: 0;
+  }
+  .fw300 { font-weight: 300; }
+  .fw400 { font-weight: 400; }
+  .fw500 { font-weight: 500; }
+  .fw600 { font-weight: 600; }
+  .fw700 { font-weight: 700; }
+  .fw800 { font-weight: 800; }
+  .fw900 { font-weight: 900; }
+  .content span {
+    font-family: 'Ag';
+    letter-spacing: -0.025em;
+    padding-left: 0.25em;
+    line-height: 1em;
+    @include breakpoint(mobile){
+      display: block;
+    }
+  }
+
+  @media (max-width: 475px){
+    .content span {
+      font-size: 20px;
+    }
+  }
+  @media (min-width:476px) and (max-width:767px){
+    .content span {
+      font-size: 42px;
+    }
+  }
+
+  .content.tl {top: 0; bottom: auto; @include breakpoint(mobile){top: 10px;}}
+  .content.tc {top: 0; bottom: auto; text-align: center; @include breakpoint(mobile){top: 10px;}}
+  .content.tr {top: 0; bottom: auto; text-align: right; right: 15px; padding-left: 0; padding-right: 15px; width: calc(100% - 15px); @include breakpoint(mobile){top: 10px;}}
+  .content.cl {top: 30%; bottom: auto;}
+  .content.cc {top: 30%; text-align: center;}
+  .content.cr {top: 30%; text-align: right; right: 15px; padding-left: 0; padding-right: 15px; width: calc(100% - 15px);}
+  .content.bl {/*this is the default*/ @include breakpoint(mobile){bottom: 10px;}}
+  .content.bc {text-align: center; @include breakpoint(mobile){bottom: 10px;}}
+  .content.br {text-align: right; right: 15px; padding-left: 0; padding-right: 15px; width: calc(100% - 15px); @include breakpoint(mobile){bottom: 10px;}}
+
+  .content > * {
+    padding: 0;
+    margin: 0;
+  }
+
+  h1, .h1 {
+    font-size: 60px;
+  }
+  h2, .h2 {
+    font-size: 34px;
+  }
+  h3, .h3 {
+    font-size: 22px;
+  }
+
+  .font-white {
+    color: #FFFFFF;
+  }
+
+  .font-dark {
+    color: #333333;
+  }
+
+  .font-custom {
+
+  }
+
+  #event-details h1, #event-details .h1 {
+    font-size: 46px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
