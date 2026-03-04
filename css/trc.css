@@ -1300,6 +1300,22 @@ main#event-details .accordion-wrapper details .accordion__content > ul { padding
 
 .hero-headline #event-details h1, .hero-headline #event-details .h1 { font-size: 46px; }
 
+.blog-listing .blog-listing--card { display: flex; flex-flow: row wrap; justify-content: space-between; }
+
+.blog-listing .blog-listing--card .card { margin-bottom: 15px; margin-top: 15px; }
+
+@media only screen and (min-width: 1024px) { .blog-listing .blog-listing--card .card { width: 32%; } }
+
+@media only screen and (max-width: 1023px) { .blog-listing .blog-listing--card .card { width: 48%; } }
+
+.blog-listing .blog-listing--card .card img { max-width: 100%; }
+
+.blog-listing .blog-listing--card .card .blog-listing__post-tags, .blog-listing .blog-listing--card .card .blog-listing__post-title, .blog-listing .blog-listing--card .card .blog-listing__post-author, .blog-listing .blog-listing--card .card .blog-listing__post-timestamp, .blog-listing .blog-listing--card .card .blog-listing__post-summary, .blog-listing .blog-listing--card .card .blog-listing__post-button-wrapper { display: none; }
+
+.blog-listing #hs_cos_wrapper_dnd_area-dnd_partial-4-module-1, .blog-listing #hs_cos_wrapper_dnd_area-dnd_partial-4-module-2 { display: none; }
+
+.blog-listing nav.pagination { padding: 30px 0; }
+
 #home2025 .home-hero { background-size: cover; padding-bottom: 50px; }
 
 #home2025 .home-hero .hero-intro { text-align: center; }
