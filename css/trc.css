@@ -1030,11 +1030,11 @@ div.hamburger.hamburger-active a span.bot { transform: rotate(-45deg); top: -16p
 
 .blog-items .blog-post-item a .inner { border-radius: 6px; padding: 15px; position: relative; height: 274px; }
 
-@media only screen and (max-width: 1023px) { .blog-items .blog-post-item a .inner { height: auto; border-radius: 0; height: 180px; } }
+@media only screen and (max-width: 1023px) { .blog-items .blog-post-item a .inner { height: 380px; border-radius: 0; } }
 
 .blog-items .blog-post-item a .inner .image { position: absolute; top: 0; left: 0; height: 330px; overflow: hidden; z-index: 9; width: 100%; border-radius: 6px; }
 
-@media only screen and (max-width: 1023px) { .blog-items .blog-post-item a .inner .image { border-radius: 0; } }
+@media only screen and (max-width: 1023px) { .blog-items .blog-post-item a .inner .image { border-radius: 0; height: auto; } }
 
 .blog-items .blog-post-item a .inner .image img { width: 100%; border-radius: 6px; }
 
@@ -1053,6 +1053,8 @@ div.hamburger.hamburger-active a span.bot { transform: rotate(-45deg); top: -16p
 .landing-header .headline { background: url("https://22042135.fs1.hubspotusercontent-na1.net/hubfs/22042135/header-elec.png") no-repeat; background-size: 100% 165px; }
 
 .landing-header .headline h1 { padding-top: 0.1em; color: #ffffff; font-family: 'Ag'; padding-bottom: 0; margin-bottom: 0; margin-top: 0.5em; font-size: 46px; letter-spacing: 0.025em; font-weight: 700; }
+
+@media only screen and (max-width: 1023px) { .landing-header .headline h1 { line-height: 1em; padding-bottom: 0.5em; } }
 
 .landing-header .intro { margin-top: 20px; }
 
@@ -1315,6 +1317,11 @@ main#event-details .accordion-wrapper details .accordion__content > ul { padding
 .blog-listing #hs_cos_wrapper_dnd_area-dnd_partial-4-module-1, .blog-listing #hs_cos_wrapper_dnd_area-dnd_partial-4-module-2 { display: none; }
 
 .blog-listing nav.pagination { padding: 30px 0; }
+
+.blog-listing .row-number-1 { display: none; }
+
+@media only screen and (max-width: 1023px) { #hs_cos_wrapper_elec_badges { display: flex; flex-flow: row wrap; justify-content: center; }
+  #hs_cos_wrapper_elec_badges .item { width: 50%; } }
 
 #home2025 .home-hero { background-size: cover; padding-bottom: 50px; }
 

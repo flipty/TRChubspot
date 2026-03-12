@@ -114,9 +114,8 @@
         position: relative;
         height: 274px;
         @include breakpoint(mobile){
-          height: auto;
+          height: 380px;
           border-radius: 0;
-          height: 180px;
         }
         .image {
           position: absolute;
@@ -129,7 +128,7 @@
           border-radius: 6px;
           @include breakpoint(mobile){
             border-radius: 0;
-            // height: 300px;
+            height: auto;
           }
           img {
             // margin-top: -12%;
@@ -204,6 +203,10 @@
       font-size: 46px;
       letter-spacing: 0.025em;
       font-weight: 700;
+      @include breakpoint(mobile){
+        line-height: 1em;
+        padding-bottom: 0.5em;
+      }
     }
   }
   .intro {
@@ -864,9 +867,21 @@ main#event-details {
   nav.pagination {
     padding: 30px 0;
   }
+  .row-number-1 { //temporarily get rid of the "Blog" coffee cup thing
+    display: none; 
+  }
 }
 
-
+#hs_cos_wrapper_elec_badges {
+  @include breakpoint(mobile){
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    .item {
+      width: 50%;
+    }
+  }
+}
 
 
 
