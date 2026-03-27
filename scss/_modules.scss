@@ -1003,6 +1003,115 @@ main#event-details {
   }
 }
 
+.trc-event.single-card {
+  .event-image {
+    position: relative;
+    img {
+      max-width: 100%;
+      height: auto;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+  }
+  .time-bug {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: red;
+    padding: 4px;
+    padding-right: 8px;
+    border-radius: 6px;
+    display: flex;
+    flex-flow: row;
+    color: white;
+    font-family: 'Poppins';
+    svg {
+      height: 18px;
+      margin-right: 5px;
+      width: 18px;
+      filter: invert(100%);
+      path {
+        color: rgba(255,255,255,1.0);
+      }
+    }
+  }
+  .content {
+    background-color: rgba(238, 238, 238, 1.0);
+    border-radius: 0 0 5px 5px;
+    padding: 15px;
+    font-family: 'Poppins';
+    border-bottom: solid 4px #CCC;
+    transition: all 250ms;
+    color: #444;
+    .title {
+      display: block;
+      font-size: 18px;
+      color: #095d40;
+      font-family: 'Ag';
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      line-height: 1.25em;
+      margin-bottom: 5px;
+    }
+    button {
+      display: block;
+      font-family: 'Ag';
+      font-weight: 700;
+      padding: 10px;
+      margin: 0 auto;
+      border-radius: 4px;
+      border: solid 1px #666;
+      margin-top: 15px;
+    }
+  }
+  &.environmental {
+    .time-bug {
+      background: rgba(22,157,83,1.0);
+    }
+    a:hover {
+      button {
+        background: rgba(22,157,83,1.0);
+        color: #fff;
+        border: solid 1px #666;
+      }
+      .content {
+        border-color: rgba(22,157,83,1.0);
+      }
+    } 
+  }
+  &.corporate {
+    .title {
+      color: #375c9a;
+    }
+    .time-bug {
+      background: #375c9a;
+    }
+    a:hover {
+      button {
+        background: #375c9a;
+        color: #fff;
+        border: solid 1px #666;
+      }
+      .content {
+        border-color: #375c9a;
+      }
+    } 
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
