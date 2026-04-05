@@ -774,6 +774,7 @@ main#event-details {
     letter-spacing: -0.025em;
     padding-left: 0.25em;
     line-height: 1em;
+    margin-bottom: 10px; //default behavior for .bl
     @include breakpoint(mobile){
       display: block;
     }
@@ -823,12 +824,22 @@ main#event-details {
     color: #333333;
   }
 
-  .font-custom {
-
-  }
-
   #event-details h1, #event-details .h1 {
     font-size: 46px;
+  }
+  //character count handling
+
+  .content {
+    &.chars-30, &.chars-31, &.chars-32, &.chars-33, &.chars-34, &.chars-35, &.chars-36, &.chars-37, &.chars-38, &.chars-39,
+    &.chars-40, &.chars-41, &.chars-42, &.chars-43, &.chars-44, &.chars-45, &.chars-46, &.chars-47, &.chars-48, &.chars-49,
+    &.chars-50, &.chars-51, &.chars-52, &.chars-53, &.chars-54, &.chars-55, &.chars-56, &.chars-57, &.chars-58, &.chars-59 
+    {
+      @include breakpoint(desktop){
+        span {
+          display: inline-grid;
+        }
+      }
+    }
   }
 }
 

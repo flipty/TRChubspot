@@ -1252,7 +1252,7 @@ main#event-details .accordion-wrapper details .accordion__content > ul { padding
 
 .hero-headline .fw900 { font-weight: 900; }
 
-.hero-headline .content span { font-family: 'Ag'; letter-spacing: -0.025em; padding-left: 0.25em; line-height: 1em; }
+.hero-headline .content span { font-family: 'Ag'; letter-spacing: -0.025em; padding-left: 0.25em; line-height: 1em; margin-bottom: 10px; }
 
 @media only screen and (max-width: 1023px) { .hero-headline .content span { display: block; } }
 
@@ -1303,6 +1303,8 @@ main#event-details .accordion-wrapper details .accordion__content > ul { padding
 .hero-headline .font-dark { color: #333333; }
 
 .hero-headline #event-details h1, .hero-headline #event-details .h1 { font-size: 46px; }
+
+@media only screen and (min-width: 1024px) { .hero-headline .content.chars-30 span, .hero-headline .content.chars-31 span, .hero-headline .content.chars-32 span, .hero-headline .content.chars-33 span, .hero-headline .content.chars-34 span, .hero-headline .content.chars-35 span, .hero-headline .content.chars-36 span, .hero-headline .content.chars-37 span, .hero-headline .content.chars-38 span, .hero-headline .content.chars-39 span, .hero-headline .content.chars-40 span, .hero-headline .content.chars-41 span, .hero-headline .content.chars-42 span, .hero-headline .content.chars-43 span, .hero-headline .content.chars-44 span, .hero-headline .content.chars-45 span, .hero-headline .content.chars-46 span, .hero-headline .content.chars-47 span, .hero-headline .content.chars-48 span, .hero-headline .content.chars-49 span, .hero-headline .content.chars-50 span, .hero-headline .content.chars-51 span, .hero-headline .content.chars-52 span, .hero-headline .content.chars-53 span, .hero-headline .content.chars-54 span, .hero-headline .content.chars-55 span, .hero-headline .content.chars-56 span, .hero-headline .content.chars-57 span, .hero-headline .content.chars-58 span, .hero-headline .content.chars-59 span { display: inline-grid; } }
 
 .blog-listing .blog-listing--card { display: flex; flex-flow: row wrap; justify-content: space-between; }
 
